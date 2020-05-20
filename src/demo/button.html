@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/javascript" src="./js/vue/vue.global.js"></script>
+        <script type="text/javascript">
+            import YButton from '../components/button/Button';
+            console.log('YButton', YButton)
+            Vue.createApp({
+                // template: `        
+                //     <toggle></toggle>
+                // `,
+                template: `        
+                    <y-button></y-button>
+                `,
+                setup() {
+
+                },
+                components: {
+                    // Toggle,
+                    'y-button': YButton
+                }
+            })
+            .mount('#app')
+        </script>
+    </body>
+</html>

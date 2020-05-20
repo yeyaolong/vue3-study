@@ -1,32 +1,22 @@
-let { ref } = Vue
+import YButton from './components/button/Button';
+import Toggle from './toggle';
+// const Toggle = require('./toggle')
 
-const Toggle  = {
-    name: 'toggle',
-    template: `
-        <div id="test"><transition><div v-if="toggle" class="test">content</div></transition></div>
-        <button @click="handleClick">button</button>
-    `,
-    setup: () => {
-        const toggle = ref(true);
-        const handleClick = () => toggle.value = !toggle.value;
-
-        return {
-            toggle,
-            handleClick
-        }
-    }
-}
-
-
+console.log('Toggle', Toggle)
+console.log('YButton', YButton)
 Vue.createApp({
-    template: `
-        <toggle></toggle>
+    // template: `        
+    //     <toggle></toggle>
+    // `,
+    template: `        
+        <y-button></y-button>
     `,
     setup() {
 
     },
     components: {
-        Toggle
+        Toggle,
+        'y-button': YButton
     }
 })
 .mount('#app')

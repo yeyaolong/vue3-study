@@ -23,10 +23,28 @@ module.exports = {
 
     module: {
         // 关于模块配置
-        rules: [],
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+               
+            },
+            {
+                test: /\.less$/,
+                loader: 'less-loader', // compiles Less to CSS
+            }
+        ],
     },
 
-    resolve: {},
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, '../src')
+        }
+    },
 
     devtool: "source-map", // enum  // 通过在浏览器调试工具(browser devtools)中添加元信息(meta info)增强调试
     // 牺牲了构建速度的 `source-map' 是最详细的。
